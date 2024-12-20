@@ -2,6 +2,7 @@
 {
     public class Task
     {
+        public required int Id { get; set; }
         public required Label Label { get; set; }
         public required string Name { get; set; }
 

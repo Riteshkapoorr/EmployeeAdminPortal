@@ -1,13 +1,18 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EmployeeAdminPortal.Model.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeAdminPortal.Data
 {
-    public class ApplicationDbContext
+    public class ApplicationDbContext : DbContext
+
     {
-        public ApplicationDbContext(DbContext<ApplicationDbContext> options): base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options)
 
         {
             
         }
+
+        public DbSet<Label> Labels { get; set; }
+        public DbSet<Model.Entities.Task> Tasks { get; set; }
     }
 }
